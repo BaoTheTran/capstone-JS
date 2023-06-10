@@ -5,7 +5,7 @@ const domId = (id)=>document.getElementById(id);
 const renderProductList = (productArr)=>{
     console.log("productArr", productArr);
     let content ="";
-    productArr.forEach(product =>{
+    productArr.forEach((product) =>{
         content += ` 
         <div class="col-lg-3 col-md-6">
             <div class="card text-black h-100">

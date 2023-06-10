@@ -77,6 +77,13 @@
             </button>
           </div>
         </div>
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Tên điện thoại" id="searchPhoneName">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="btnFindPhone"><i class="fa fa-search"></i></span>
+          </div>
+        </div>
+      </div>
        
         <div class=" table-responsive">
         <table class="table display" id="myTable">
@@ -233,7 +240,7 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fa-solid fa-signature"></i></span>
                       </div>
-                      <select class="form-control" name="chucvu" id="type">
+                      <select class="form-control" name="type" id="type">
                         <option selected disabled>Select brand</option>
                         <option>Apple</option>
                         <option>Samsung</option>
@@ -404,6 +411,15 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+
+    <!-- model -->
+    <script src="../models/phone.js"></script>
+    <!-- checkValid -->
+    <script src="../controllers/checkValid.js"></script>
+    <script src="../controllers/utis.js"></script>
+    <script src="../controllers/controllers.js"></script>
+    <!-- call api -->
+    <script src="../../api.js"></script>
     <!-- main js -->
     <script src="../controllers/mainAdmin.js"></script>
   </body>
