@@ -26,7 +26,7 @@ function btnDelete(id){
 
 //add product
 domId('btnAddPhone').addEventListener("click",function(){
-    var phone = getItem("");
+    var phone = getItem(true);
     api.callApi("SaiGonPhone","POST",phone)
     .then(function(){
         fetchProductList();
@@ -40,11 +40,12 @@ domId('btnAddPhone').addEventListener("click",function(){
 function btnEdit(id){
     api.callApi(`SaiGonPhone/${id}` ,"GET", null)
     .then(function(res){
+        domId('id').value =res.data.id;
         domId('name').value =res.data.name;
         domId('price').value =res.data.price;
         domId('screen').value=res.data.screen;
-        domId('backCam').value=res.data.backCam;
-        domId('frontCam').value=res.data.frontCam;
+        domId('backCam').value=res.data.backCamera;
+        domId('frontCam').value=res.data.frontCamera;
         domId('img').value=res.data.img;
         domId('desc').value=res.data.desc;
         domId('type').value=res.data.type;

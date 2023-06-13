@@ -1,5 +1,6 @@
 //domid
 const domId = (id)=>document.getElementById(id);
+var validation = new Validation();
 
 //render list
 const  renderProductList = (productArr)=>{
@@ -28,7 +29,8 @@ const  renderProductList = (productArr)=>{
 };
 
 //get item 
-function getItem(id){
+function getItem(){
+    var id = domId('id').value;
     var name = domId('name').value;
     var price = domId('price').value;
     var screen = domId('screen').value;
@@ -38,10 +40,33 @@ function getItem(id){
     var desc = domId('desc').value;
     var type = domId('type').value;
 
+    var isValid = true;
+
+    if(isValid) {
+        isValid &= validation.kiemTraRong(id,'tbname',"(**)Vui lòng không để trống.");
+
+        isValid &= validation.kiemTraRong(id,'tbprice',"(**)Vui lòng không để trống.");
+
+        isValid &= validation.kiemTraRong(id,'tbscreen',"(**)Vui lòng không để trống.");
+        
+        isValid &= validation.kiemTraRong(id,'tbbackCam',"(**)Vui lòng không để trống.");
+
+        isValid &= validation.kiemTraRong(id,'tbfrontCam',"(**)Vui lòng không để trống.");
+
+        isValid &= validation.kiemTraRong(id,'tbimg',"(**)Vui lòng không để trống.");
+
+        isValid &= validation.kiemTraRong(id,'tbdesc',"(**)Vui lòng không để trống.");
+
+        //brand
+    }
+
+    if(!isValid) return null;
+
     const phone = new Phone(id,name,price,screen,backCam,frontCam,img,desc,type);
     return phone;
 };
 
+//findPhoneName
 function findPhoneName(keywords,productArr){
     var findArr = [];
     for(var i = 0; i < productArr.length; i++){
