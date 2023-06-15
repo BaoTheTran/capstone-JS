@@ -32,15 +32,18 @@ strong {
   background-color: #294d5c;
   transition: all 0.15s;
 }
+
 .btn:hover {
   outline: none;
   background-color: #5f9db8;
 }
+
 .btn:focus {
   outline: 0;
   box-shadow: none !important;
   box-shadow: 0 0 0 2px #404b61, inset 0 0 0 2px #ffffff;
 }
+
 .btn:active {
   transform: scale(0.95);
   background-color: #294d5c;
@@ -49,6 +52,7 @@ strong {
 .btn-banner:hover {
   background-color: #ffffff;
 }
+
 #btnDelete {
   background-color: #e7380c;
 }
@@ -69,19 +73,6 @@ strong {
   background-color: #f1ca55;
 }
 
-main {
-  background-color: #ffffff;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-.main-color {
-  background: #2c5364;
-}
-
-.gradient-custom {
-  background: linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8));
-}
-
 header #navbarColor01 a {
   transition: 0.3s all ease-in-out;
 }
@@ -89,6 +80,7 @@ header #navbarColor01 a {
 header #navbarColor01 a:hover {
   transform: scale(1.15);
 }
+
 .black {
   background: rgba(0, 0, 0, 0.8);
 }
@@ -110,6 +102,20 @@ header #navbarColor01 a:hover {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   align-items: center;
+}
+
+main {
+  background-color: #ffffff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.main-color {
+  background: #2c5364;
+}
+
+.gradient-custom {
+  background: linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8));
 }
 
 footer {
@@ -135,7 +141,6 @@ footer {
     width: 100% !important;
   }
 }
-
 @media (max-width: 525.5px) {
   #content.my-5 {
     margin-top: 20px !important;
@@ -145,8 +150,7 @@ footer {
   .col-md-6 {
     padding-left: 0;
   }
-
   #selectList {
     width: 100% !important;
   }
-}
+}/*# sourceMappingURL=styleAdmin.css.map */

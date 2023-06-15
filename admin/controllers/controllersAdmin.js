@@ -30,7 +30,7 @@ const  renderProductList = (productArr)=>{
 
 //get item 
 function getItem(id){
-    // var id = domId('id').value;
+    var id = domId('id').value;
     var name = domId('name').value;
     var price = domId('price').value;
     var screen = domId('screen').value;
