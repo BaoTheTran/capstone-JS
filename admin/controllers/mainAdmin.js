@@ -26,14 +26,18 @@ function btnDelete(id){
 
 //add product
 domId('btnAddPhone').addEventListener("click",function(){
-    var phone = getItem(true);
-    api.callApi("SaiGonPhone","POST",phone)
-    .then(function(){
-        fetchProductList();
-    })
-    .catch(function (err) {
-        console.log(err);
-    });
+    var phone = getItem("");
+    if(phone){
+        api.callApi("SaiGonPhone","POST",phone)
+        .then(function(){
+                fetchProductList();
+                domId('formPhone').reset();
+        })
+        .catch(function (err) {
+            console.log(err);
+        });
+    }
+    
 });
 
 //edit
@@ -61,6 +65,7 @@ domId('btnUpdate').addEventListener("click",function(id){
     api.callApi(`SaiGonPhone/${phone.id}` ,"PUT", phone)
     .then(function () {
         fetchProductList();
+        domId('btnClose').click();
       })
       .catch(function (err) {
         console.log(err);
@@ -79,3 +84,8 @@ domId('searchPhoneName').addEventListener('keyup',function(){
         console.log(err)
       });
 })
+
+//reset
+domId('addPhoneForm').onclick = function(){
+    domId('formPhone').reset();
+}

@@ -29,8 +29,8 @@ const  renderProductList = (productArr)=>{
 };
 
 //get item 
-function getItem(){
-    var id = domId('id').value;
+function getItem(id){
+    // var id = domId('id').value;
     var name = domId('name').value;
     var price = domId('price').value;
     var screen = domId('screen').value;
@@ -41,25 +41,24 @@ function getItem(){
     var type = domId('type').value;
 
     var isValid = true;
+   
+        isValid &= validation.kiemTraRong(name,'tbname',"(**)Vui lòng không để trống.")&& validation.kiemTraChuoiKiTu(name, 'tbname',"(**)Vui lòng nhập chữ.");
 
-    if(isValid) {
-        isValid &= validation.kiemTraRong(id,'tbname',"(**)Vui lòng không để trống.");
+        isValid &= validation.kiemTraRong(price,'tbprice',"(**)Vui lòng không để trống.") &&validation.kiemTraSo(price,'tbprice',"(**)Vui lòng nhập số.",0, 10000000e9);
 
-        isValid &= validation.kiemTraRong(id,'tbprice',"(**)Vui lòng không để trống.");
-
-        isValid &= validation.kiemTraRong(id,'tbscreen',"(**)Vui lòng không để trống.");
+        isValid &= validation.kiemTraRong(screen,'tbscreen',"(**)Vui lòng không để trống.");
         
-        isValid &= validation.kiemTraRong(id,'tbbackCam',"(**)Vui lòng không để trống.");
+        isValid &= validation.kiemTraRong(backCam,'tbbackCam',"(**)Vui lòng không để trống.");
 
-        isValid &= validation.kiemTraRong(id,'tbfrontCam',"(**)Vui lòng không để trống.");
+        isValid &= validation.kiemTraRong(frontCam,'tbfrontCam',"(**)Vui lòng không để trống.");
 
-        isValid &= validation.kiemTraRong(id,'tbimg',"(**)Vui lòng không để trống.");
+        isValid &= validation.kiemTraRong(img,'tbimg',"(**)Vui lòng nhập vào link hình ảnh.");
 
-        isValid &= validation.kiemTraRong(id,'tbdesc',"(**)Vui lòng không để trống.");
+        isValid &= validation.kiemTraRong(desc,'tbdesc',"(**)Vui lòng không để trống.");
 
+        isValid &=  validation.kiemTraBrand('type','tbtype', "(**)Vui lòng chọn thương hiệu.");
         //brand
-    }
-
+    
     if(!isValid) return null;
 
     const phone = new Phone(id,name,price,screen,backCam,frontCam,img,desc,type);
