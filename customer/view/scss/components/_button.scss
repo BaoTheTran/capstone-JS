@@ -1,0 +1,33 @@
+.btn {
+    position: relative;
+    border: 0;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    color: rgba(255, 255, 255, 0.85);
+    font-family: 'Muli';
+    font-size: 14px;
+    line-height: 14px;
+    background-color: #294d5c;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .btn:hover {
+    outline: none;
+    background-color: #5f9db8;
+  }
+  .btn:focus {
+    outline: 0;
+    box-shadow: none !important;
+    /* box-shadow: 0 0 0 2px #404b61, inset 0 0 0 2px #ffffff; */
+  }
+  .btn:active {
+    transform: scale(0.95);
+  }
+  
+  .btn + .btn {
+    margin-left: 8px;
+  }
+  
