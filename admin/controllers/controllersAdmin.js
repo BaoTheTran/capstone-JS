@@ -42,7 +42,7 @@ function getItem(id){
 
     var isValid = true;
    
-        isValid &= validation.kiemTraRong(name,'tbname',"(**)Vui lòng không để trống.")&& validation.kiemTraChuoiKiTu(name, 'tbname',"(**)Vui lòng nhập chữ.");
+        isValid &= validation.kiemTraRong(name,'tbname',"(**)Vui lòng không để trống.");
 
         isValid &= validation.kiemTraRong(price,'tbprice',"(**)Vui lòng không để trống.") &&validation.kiemTraSo(price,'tbprice',"(**)Vui lòng nhập số.",0, 10000000e9);
 
