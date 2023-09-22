@@ -8,9 +8,9 @@ const  renderProductList = (productArr)=>{
     let content = "";
     productArr.forEach((product) =>{
         content += ` <tr>
-        <td>${product.id}</td>
-        <td><strong>${product.name}</strong></td>
-        <td>$${product.price}</td>
+        <td data-label="#">${product.id}</td>
+        <td data-label="Name"><strong>${product.name}</strong></td>
+        <td data-label="Price">$${product.price}</td>
         <td style="text-align: center"><img src=${product.img} alt="phone-img" width="150" height="150"></td>
         <td><b>${product.desc}</b> 
         <p>Screen :  ${product.screen}</p>
